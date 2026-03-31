@@ -1,0 +1,22 @@
+[package]
+name = "kernel"
+version = "0.1.0"
+edition = "2018"
+
+[profile.dev]
+opt-level = "s"
+
+[profile.release]
+opt-level = "s"
+lto = true
+
+[lib]
+name = "kernel"
+edition = "2018"
+path = "src/kernel.rs"
+crate-type = ["staticlib"]
+
+[dependencies]
+x86 = "0.52"  # Check for latest version
+
+
